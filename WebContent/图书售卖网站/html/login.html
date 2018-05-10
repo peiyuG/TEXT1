@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>登陆页面</title>
+	<link rel="stylesheet" type="text/css" href="../css/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<style type="text/css">
+		.logbox{
+			/*display: none;*/
+			width: 400px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 2;
+		}
+		.log-title{
+			text-align: center;
+			display: inline-block;
+			margin-left: 171px;
+			line-height: 0px;
+		}
+		.input-box{
+			margin-top: 25px;
+		}
+	</style>
+</head>
+<body>
+	<div class="panel panel-primary logbox">
+        <div class="panel-heading">
+            <p class="log-title">登陆</p>
+        </div>
+        <div class="panel-body">
+            <div class="input-group text-center">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                 <input type="text" class="form-control" placeholder="用户名" id="userName">
+            </div>
+            <div class="input-group input-box">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                 <input type="password" class="form-control" placeholder="密码" id="password">
+            </div>
+            <div class="input-group input-box" style="width: 100%;">
+                <button class="btn btn-primary btn-block" id="loginBtn">登陆</button>
+                <button class="btn btn-default btn-block" id="registerBtn">注册</button>
+            </div>
+        </div>
+    </div>
+</body>
+	<script type="text/javascript" src="../js/lib/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../js/lib/CookieUtil.js"></script>
+	<script type="text/javascript">
+		// 登陆
+	$('#loginBtn').click(function(){
+	    let userName = $('#userName').val(),
+	        password = $('#password').val();
+	    if(userName == '' || password == ''){
+	    	alert('用户名或密码不能为空')
+	    }else{
+	    	$.ajax({
+		        url:'/Bookshops/user/UserLoginServlet',
+		        dataType:'json',
+		        type:'post',
+		        data:{userName,password},
+		        success(data){
+		            
+		            if(data.code == 1){
+		                if(data.data.userStatus == 1){
+		                    CookieUtil.set('status',1)
+		                    window.location="index.html"
+		                }else if(data.data.userStatus ==2){
+		                    CookieUtil.set('status',2)
+		                    window.location="index.html"
+		                }
+		            }else{
+	                	alert(data.msg);
+	                }
+		        }
+		    }).then(function(value){
+		    })
+	    }
+	    
+	})
+	// 注册
+	$('#registerBtn').click(function(){
+		let userName = $('#userName').val(),
+	        password = $('#password').val();
+	    $.ajax({
+	        url:'/Bookshops/user/UserSignUpServlet',
+	        dataType:'json',
+	        type:'post',
+	        data:{userName,password},
+	        success(data){
+	            if(data.code == 1){
+	                console.log(data)
+	                alert('注册成功，请登录')
+	                $('#userName').val('');
+	                $('#password').val('');
+	            }else{
+	            	alert(data.msg);
+	            }
+	        }
+	    })
+	})
+	</script>
+</html>

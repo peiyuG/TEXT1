@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心</title>
+	<link rel="stylesheet" type="text/css" href="../css/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/page/user_management.css">
+	<link rel="stylesheet" type="text/css" href="../css/common/header.css">
+</head>
+<body>
+
+	<div class="panel panel-primary user-box">
+		<div class="panel-heading">用户信息</div>
+		<div class="panel-body">
+			<p>这里有你的个人信息，并且可以修改他们</p>
+		</div>
+		<ul class="list-group">
+		    <li class="list-group-item clearfix">
+		    	<form class="form-inline">
+					<div class="form-group">
+						<label>用户名:</label>
+						<span class="info"></span>
+					</div>
+				</form>
+		    </li>
+		    <li class="list-group-item clearfix">
+		    	<form class="form-inline">
+					<div class="form-group">
+						<label>密码:</label>
+						<span class="info"></span>
+					</div>
+				</form>
+		    </li>
+		    <li class="list-group-item">
+		    	<button class="btn btn-warning" id="modefied">修改</button>
+		    	<button class="btn btn-info" disabled="disabled" id="submitInfo">提交修改信息</button>
+		    </li>
+		</ul>
+	</div>
+	<div class="panel panel-primary user-box">
+		<div class="panel-heading">订单列表</div>
+		<div class="panel-body">
+			<p>这里有你已经买的书籍订单列表</p>
+		</div>
+		<table class="table table-striped table-hover table-responsive" id="order">
+			<tr>
+				<th>订单ID</th>
+				<th>书籍名称</th>
+				<th>状态</th>
+			</tr>
+			<!-- <tr>
+				<td>6165651515131531</td>
+				<td>数据结构</td>
+				<td>已购买</td>
+			</tr>
+			<tr>
+				<td>6165651515131531</td>
+				<td>数据结构</td>
+				<td>未支付</td>
+			</tr>
+			<tr>
+				<td>6165651515131531</td>
+				<td>数据结构</td>
+				<td>已取消</td>
+			</tr> -->
+		</table>
+	</div>
+
+
+	<script type="text/javascript" src="../js/lib/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../components/header.js"></script>
+	<script type="text/javascript" src="../js/page/user_management.js"></script>
+</body>
+</html>

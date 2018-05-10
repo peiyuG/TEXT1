@@ -1,0 +1,36 @@
+.user-box{
+	width: 1200px;
+	margin: 50px auto 0;
+}
+.intro{
+	width: 500px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block;
+}
+.bookname{
+	display: inline-block;
+	width: 150px;
+}
+.classification{
+	display: inline-block;
+	width: 80px;
+}
+.price{
+	display: inline-block;
+	width: 50px;
+}
+.modefied-box{
+	width: 600px;
+	display: none;
+	width: 400px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2;
+}
+textarea{
+	resize:none;
+}

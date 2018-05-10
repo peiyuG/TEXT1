@@ -1,0 +1,36 @@
+.merchandise-list{
+	padding: 40px;
+}
+.item{
+	/*height: 360px;*/
+	/*width: 327px;*/
+}
+.book-name{
+	text-align: center;
+}
+.book-img{
+	margin-top: 30px;
+}
+.book-intro{
+	padding: 0 10px;
+	word-wrap: break-word;
+	overflow: hidden;
+	text-indent: 2em;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	height: 58px;
+}
+.chase-btn{
+	margin: 0 auto;
+}
+.btn-wrap{
+	text-align: center;
+}
+.book-item-intro{
+	overflow: hidden;
+	text-indent: 2em;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 6;
+}

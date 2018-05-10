@@ -1,0 +1,14 @@
+.cover-layer{
+	background: rgba(0,0,0,.4);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	display: none;
+}
+.close{
+	outline: none;
+}
+.login-user{
+	margin-right: 50px;
+}
